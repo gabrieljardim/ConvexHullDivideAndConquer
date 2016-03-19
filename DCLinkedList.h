@@ -1,5 +1,5 @@
-#ifndef DOUBLECIRCULARLINKEDLIST_H_INCLUDED
-#define DOUBLECIRCULARLINKEDLIST_H_INCLUDED
+#ifndef DOUBLECIRCULARLINKEDLIST_H
+#define DOUBLECIRCULARLINKEDLIST_H
 
 /*Double Circular Linked List implementation*/
 
@@ -25,7 +25,8 @@ public:
     void next();
     void previous();
     Type* getCurrentKey();
-   // print();
+    int count();
+
 };
 
 template <class Type>
@@ -50,17 +51,26 @@ Type* DoubleCircularLinkedList<Type>::popKey()
 
     if(m_node != NULL)
     {
-        if(m_node->next != m_node)
+        key = m_node->key;
+
+        if(m_node->prev != m_node) //caso onde a lista tem mais que 1 elemento
         {
+            Node<Type>* temp;
+
+            temp = m_node->prev;
             m_node->prev->next = m_node->next;
             m_node->next->prev = m_node->prev;
-
+            delete m_node;
+            m_node = temp;
         }
-
-        key = m_node->key;
-        delete m_node;
+        else
+        {
+                delete m_node;
+                m_node = NULL;
+        }
     }
-        return key;
+
+    return key;
 }
 
 template <class Type>
@@ -77,15 +87,17 @@ void DoubleCircularLinkedList<Type>::pushKey(Type* key)
     }
     else
     {
-        newNode->prev = m_node;
-        newNode->next = m_node->next;
-        newNode->next->prev = newNode;
-        m_node->next = newNode;
+        newNode->prev = m_node->prev;
+        newNode->next = m_node;
+        newNode->prev->next = newNode;
+        m_node->prev = newNode;
+        m_node = newNode;
     }
 }
 
 template <class Type>
-void DoubleCircularLinkedList<Type>::next(){
+void DoubleCircularLinkedList<Type>::next()
+{
     if(!isEmpty())
         m_node = m_node->next;
 }
@@ -106,8 +118,24 @@ Type* DoubleCircularLinkedList<Type>::getCurrentKey()
         return m_node->key;
 }
 
+template <class Type>
+int DoubleCircularLinkedList<Type>::count()
+{
+    int count = 0;
+    if(m_node)
+    {
+        Node<Type>* aux;
+        aux = m_node;
 
+        do
+        {
+            m_node = m_node->next;
+            count++;
 
+        } while(m_node != aux);
+    }
+    return count;
+}
 
 
 #endif

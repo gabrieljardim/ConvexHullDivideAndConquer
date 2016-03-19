@@ -1,31 +1,24 @@
 #include <iostream>
 #include "DCLinkedList.h"
+#include "Point.h"
 
 using namespace std;
 
 int main()
 {
-    cout << "Hello world!" << endl;
-    DoubleCircularLinkedList<int> dcll;
+    DoubleCircularLinkedList<Point> dcll;
 
-    cout << dcll.isEmpty() << endl;
+    Point* p = new Point(1,2);
 
-    dcll.pushKey(new int(2));
-    dcll.pushKey(new int(8));
-    dcll.pushKey(new int(9));
-    dcll.pushKey(new int(12));
-    dcll.pushKey(new int(14));
-    dcll.pushKey(new int(29));
-
-    int* current = dcll.getCurrentKey();
-    cout << *(dcll.getCurrentKey()) << endl;
-    dcll.next();
-    while(current != dcll.getCurrentKey())
-    {cout << *(dcll.getCurrentKey()) << endl;
-    dcll.next();}
-
-    cout << dcll.isEmpty() << endl;
-
+    dcll.pushKey(new Point(1,2));
+    dcll.pushKey(new Point(2,3));
+    cout << dcll.count() << endl;
+    dcll.popKey();
+    cout << dcll.count() << endl;
+    dcll.popKey();
+    cout << dcll.count() << endl;
+    dcll.popKey();
+    cout << dcll.count() << endl;
 
     return 0;
 }
