@@ -26,12 +26,8 @@ void ConvexHull::dataInput()
         m_pointList.push_back(p);
     }
 
-    std::cout << "O n de elementos do vetor eh: " << m_pointList.size() << std::endl;
     std::cout << std::endl;
     this->dataSort();
-
-    for(unsigned int i = 0; i < m_pointList.size(); ++i)
-        std::cout << "Ponto: " <<  m_pointList.at(i).x << " " << m_pointList.at(i).y << std::endl;
 
 }
 
@@ -45,8 +41,8 @@ std::vector<Point> ConvexHull::computeHull(std::vector<Point> v)
     {
          int half = vectorSize / 2;
 
-         std::vector<Point> a(v.begin(), v.begin() + half -1);
-         std::vector<Point> b(v.begin() + half, v.end());
+         std::vector<Point> a(v.begin(), v.begin() + half);
+         std::vector<Point> b(v.begin() + (half), v.end());
 
          return mergeHull(computeHull(a), computeHull(b));
 
@@ -57,7 +53,12 @@ std::vector<Point> ConvexHull::computeHull(std::vector<Point> v)
 
 std::vector<Point> ConvexHull::mergeHull(std::vector<Point> a, std::vector<Point> b)
 {
-
+    for(int i = 0; i < a.size(); ++i)
+        std::cout << "Ponto " << a[i].x << " " << a[i].y << std::endl;
+    for(int i = 0; i < b.size(); ++i)
+        std::cout << "Ponto " << b[i].x << " " << b[i].y << std::endl;
+        std::vector<Point> c;
+        return b;
 }
 
 void ConvexHull::execute()

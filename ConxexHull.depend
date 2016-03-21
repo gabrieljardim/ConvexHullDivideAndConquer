@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1458531603 source:c:\users\desenvolvimento\documents\projetos\convexhulldivideandconquer\main.cpp
+1458539043 source:c:\users\desenvolvimento\documents\projetos\convexhulldivideandconquer\main.cpp
 	<iostream>
 	<vector>
 	"convexhull.h"
@@ -10,7 +10,7 @@
 
 1458529284 c:\users\desenvolvimento\documents\projetos\convexhulldivideandconquer\point.h
 
-1458537218 source:c:\users\desenvolvimento\documents\projetos\convexhulldivideandconquer\convexhull.cpp
+1458538967 source:c:\users\desenvolvimento\documents\projetos\convexhulldivideandconquer\convexhull.cpp
 	"convexhull.h"
 	<iostream>
 	<algorithm>

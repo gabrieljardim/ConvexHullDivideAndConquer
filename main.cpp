@@ -13,6 +13,7 @@ int main()
     ConvexHull chull;
 
     chull.dataInput();
+    chull.execute();
 
 
     return 0;
