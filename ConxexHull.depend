@@ -1,10 +1,21 @@
 # depslib dependency file v1.0
-1458403962 source:c:\users\desenvolvimento\documents\projetos\convexhulldivideandconquer\main.cpp
+1458531603 source:c:\users\desenvolvimento\documents\projetos\convexhulldivideandconquer\main.cpp
 	<iostream>
+	<vector>
+	"convexhull.h"
 	"DCLinkedList.h"
 	"Point.h"
 
-1458403616 c:\users\desenvolvimento\documents\projetos\convexhulldivideandconquer\dclinkedlist.h
+1458409595 c:\users\desenvolvimento\documents\projetos\convexhulldivideandconquer\dclinkedlist.h
 
-1458404001 c:\users\desenvolvimento\documents\projetos\convexhulldivideandconquer\point.h
+1458529284 c:\users\desenvolvimento\documents\projetos\convexhulldivideandconquer\point.h
+
+1458537218 source:c:\users\desenvolvimento\documents\projetos\convexhulldivideandconquer\convexhull.cpp
+	"convexhull.h"
+	<iostream>
+	<algorithm>
+
+1458537188 c:\users\desenvolvimento\documents\projetos\convexhulldivideandconquer\convexhull.h
+	<vector>
+	"Point.h"
 

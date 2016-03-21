@@ -1,7 +1,12 @@
 #ifndef DOUBLECIRCULARLINKEDLIST_H
 #define DOUBLECIRCULARLINKEDLIST_H
 
-/*Double Circular Linked List implementation*/
+/*Double Circular Linked List
+  Não se responsabiliza por deletar a chave
+  Retorna a referência da chave no pop()
+  Só gerencia objetos alocados por outra região do código
+*/
+
 
 template <class Type>
 struct Node{
@@ -122,6 +127,7 @@ template <class Type>
 int DoubleCircularLinkedList<Type>::count()
 {
     int count = 0;
+
     if(m_node)
     {
         Node<Type>* aux;
@@ -131,9 +137,9 @@ int DoubleCircularLinkedList<Type>::count()
         {
             m_node = m_node->next;
             count++;
-
         } while(m_node != aux);
     }
+
     return count;
 }
 
