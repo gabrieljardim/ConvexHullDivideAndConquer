@@ -3,6 +3,8 @@
 
 #include <vector>
 #include "Point.h"
+#include "DCLinkedList.h"
+
 
 
 class ConvexHull
@@ -18,6 +20,8 @@ class ConvexHull
     private:
 
         void dataSort();
+        void fillLinkedList(const std::vector<Point> v, DoubleCircularLinkedList<Point>* dcll);
+        int isLeft(Point v0, Point v1, Point p );
         std::vector<Point> m_pointList;
 
 };

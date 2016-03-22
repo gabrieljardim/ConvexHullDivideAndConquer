@@ -75,3 +75,13 @@ void ConvexHull::dataSort()
 {
     std::sort(this->m_pointList.begin(), this->m_pointList.end(), xAxisCompare);
 }
+
+void ConvexHull::fillLinkedList(const std::vector<Point> v, DoubleCircularLinkedList<Point>* dcll)
+{
+
+}
+
+int ConvexHull::isLeft(Point v0, Point v1, Point p )
+{
+    return (v1.x - v0.x)*(p.y - v0.y) - (p.x - v0.x)*(v1.y - v0.y);
+}
